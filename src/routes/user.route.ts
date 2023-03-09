@@ -6,9 +6,9 @@ const router = express.Router();
 
 // update user by id
 
-// get all users
-
 // get User by id
+
+// get all users
 
 // delete user by id
 
