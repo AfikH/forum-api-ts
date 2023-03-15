@@ -1,15 +1,13 @@
 import express from 'express';
 
+import userController from '../controllers/user.controller';
+
 const router = express.Router();
 
-// create new user
-
-// update user by id
-
-// get User by id
-
-// get all users
-
-// delete user by id
+router.post('/', userController.createUser);
+router.put('/:id', userController.updateUser);
+router.get('/:id', userController.findUser);
+router.get('/', userController.findUsers);
+router.delete('/:id', userController.deleteUser);
 
 export default router;

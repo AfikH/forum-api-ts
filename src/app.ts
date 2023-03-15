@@ -1,9 +1,19 @@
 import 'dotenv/config';
 import express from 'express';
+import mongoose from 'mongoose';
 
 import userRoutes from './routes/user.route';
 
+mongoose.connect(`${process.env.MONGO_URI}/forum-api-ts`)
+.then(() => {
+    console.log('Connected to database !');
+}).catch(error => {
+    console.log(`Could not connect to database: ${error}`);
+});
+
 const app = express();
+
+app.use(express.json());
 
 app.use('/user', userRoutes);
 
